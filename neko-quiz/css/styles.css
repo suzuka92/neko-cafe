@@ -11,6 +11,7 @@ body {
     font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
     border-radius: 10px;
     padding: 30px;
+    position: relative;
 }
 
 #question {
@@ -61,7 +62,6 @@ body {
 
 #btn {
     background-color: #ffd700;
-
     border-radius: 10px; 
     padding: 10px;
     margin: 20px 10px 10px 10px;
@@ -76,6 +76,52 @@ body {
 }
 
 #btn:active {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    border-bottom: none;
+}
+
+#result {
+    position: absolute;
+    width: 400px;
+    background-color: #fff;
+    border: solid 10px #ffd700;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.7);
+    text-align: center;
+    top: 100px;
+    left:0;
+    right:0;
+    margin: auto;
+    transition: 0.4s;
+}
+
+#result.hidden {
+    transform: translateY(-800px);
+}
+
+#result h1{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#result a{
+    font-weight: bold;
+    background-color: #ffd700;
+    border-radius: 10px; 
+    padding: 10px;
+    margin: 20px 10px 10px 10px;
+    text-align: center;
+    border-bottom: solid 5px #b39800;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+}
+
+
+#result a:active {
     -webkit-transform: translateY(5px);
     transform: translateY(5px);
     border-bottom: none;
