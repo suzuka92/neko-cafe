@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
+import SlideShow from './SlideShow';
+
+
 
 const App = () => (
   <BrowserRouter>
@@ -21,6 +24,8 @@ const App = () => (
         <p><Link to="/cast">Cast</Link></p>
         <p><Link to="/price">Price</Link></p>
         <p><Link to="/game">Game</Link></p>
+
+        <SlideShow/>
       </div>
     )
   }
