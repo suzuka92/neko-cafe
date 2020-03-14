@@ -1,66 +1,58 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import SlideShow from './SlideShow';
+import Nav from 'react-bootstrap/Nav'
 
 
 
 const App = () => (
   <BrowserRouter>
-    <div class="container">
-      <Route exact path="/" component={Home} />
-      <Route path="/concept" component={Concept} />
-      <Route path="/cact" component={Cast} />
-      <Route path="/price" component={Price} />
-      <Route path="/Game" component={Game} />
+    <div class='container mt-5'>
+      <Nav justify variant="tabs" defaultActiveKey="/home">
+        <Nav.Item>
+          <Nav.Link href='/home'>Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey='./about'>About</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="./member">Member</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="./game">Game</Nav.Link>
+        </Nav.Item>
+      </Nav>
+
+      <Route exact path='/' component={Home} />
+      <Route path='/about' component={About} />
+      <Route path='/member' component={Member} />
+      <Route path='/game' component={Game} />
     </div>
   </BrowserRouter>
 )
 
-  const Home = () => {
-    return (
-      <div>
-        <h1>Welcome cafe Bell</h1>
-        <p><Link to="/concept">Concept</Link></p>
-        <p><Link to="/cast">Cast</Link></p>
-        <p><Link to="/price">Price</Link></p>
-        <p><Link to="/game">Game</Link></p>
+  const Home = () => (
+    <div>
+      <h1>Home</h1>
+    </div>
+  )
 
-        <SlideShow/>
-      </div>
-    )
-  }
+  const About = () => (
+    <div>
+      <h1>About</h1>
+    </div>
+  )
 
-  const Concept = () => {
-    return (
-      <div>
-        <h1>Concept</h1>
-      </div>
-    )
-  }
+  const Member = () => (
+    <div>
+      <h1>Member</h1>
+    </div>
+  )
 
-  const Cast = () => {
-    return (
-      <div>
-        <h1>Cast</h1>
-      </div>
-    )
-  }
-
-  const Price = () => {
-    return (
-      <div>
-        <h1>Price</h1>
-      </div>
-    )
-  }
-
-  const Game = () => {
-    return (
+  const Game = () => (
       <div>
         <h1>Game</h1>
       </div>
-    )
-  }
+  )
 
 
 export default App;
