@@ -1,32 +1,30 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import Nav from 'react-bootstrap/Nav'
+import { Nav, Image, Container, Row, Col  } from 'react-bootstrap'
 
 
 
 const App = () => (
   <BrowserRouter>
-    <div class='container mt-5'>
       <Nav justify variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
           <Nav.Link href='/home'>Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey='./about'>About</Nav.Link>
+          <Nav.Link href='./about'>About</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="./member">Member</Nav.Link>
+          <Nav.Link href="./member">Member</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="./game">Game</Nav.Link>
+          <Nav.Link href="./game">Game</Nav.Link>
         </Nav.Item>
       </Nav>
 
-      <Route exact path='/' component={Home} />
+      <Route exact path='/home' component={Home} />
       <Route path='/about' component={About} />
       <Route path='/member' component={Member} />
       <Route path='/game' component={Game} />
-    </div>
   </BrowserRouter>
 )
 
@@ -43,10 +41,35 @@ const App = () => (
   )
 
   const Member = () => (
-    <div>
-      <h1>Member</h1>
-    </div>
+
+  <Container>
+    
+  <Row>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-gin.jpg" thumbnail id="gin"/>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-bibi.jpg" thumbnail id="bibi"/>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-coco.jpg" thumbnail id="coco"/>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-momo.jpg" thumbnail id="momo"/>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-kotetsu.jpg" thumbnail id="kotetsu"/>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-koharu.jpg" thumbnail id="koharu"/>
+    </Col>
+    <Col xs={6} md={4}>
+      <Image src="images/member-icon-uni.jpg" thumbnail id="uni"/>
+    </Col>
+  </Row>
+  </Container>
   )
+
 
   const Game = () => (
       <div>
